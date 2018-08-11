@@ -1,4 +1,4 @@
-service: serverless-rest-api-with-dynamodb
+service: transactions
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
@@ -36,6 +36,14 @@ functions:
           cors: true
 
   get:
+    handler: transactions/getTab.getTab
+    events:
+      - http:
+          path: transactions/tab/{year}/{month}
+          method: get
+          cors: true
+
+  getMonth:
     handler: transactions/get.get
     events:
       - http:
