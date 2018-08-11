@@ -1,87 +1,86 @@
-service: transactions
-
+--- 
+TableName: "${self:provider.environment.DYNAMODB_TABLE}"
 frameworkVersion: ">=1.1.0 <2.0.0"
-
-provider:
+functions: 
+  create: 
+    events: 
+      - 
+        http: 
+          cors: true
+          method: post
+          path: transactions
+    handler: transactions/create.create
+  delete: 
+    events: 
+      - 
+        http: 
+          cors: true
+          method: delete
+          path: "transactions/{id}"
+    handler: transactions/delete.delete
+  get: 
+    events: 
+      - 
+        http: 
+          cors: true
+          method: get
+          path: "transactions/{id}"
+    handler: "transactions/{id}"
+  getTab: 
+    events: 
+      - 
+        http: 
+          cors: true
+          method: get
+          path: "transactions/tab/{year}/{month}"
+    handler: transactions/getTab.getTab
+  list: 
+    events: 
+      - 
+        http: 
+          cors: true
+          method: get
+          path: transactions
+    handler: transactions/list.list
+  update: 
+    events: 
+      - 
+        http: 
+          cors: true
+          method: put
+          path: "transactions/{id}"
+    handler: transactions/update.update
+provider: 
+  environment: 
+    DYNAMODB_TABLE: "${self:service}-${opt:stage, self:provider.stage}"
+  iamRoleStatements: 
+    - 
+      Action: 
+        - "dynamodb:Query"
+        - "dynamodb:Scan"
+        - "dynamodb:GetItem"
+        - "dynamodb:PutItem"
+        - "dynamodb:UpdateItem"
+        - "dynamodb:DeleteItem"
+      Effect: Allow
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
   name: aws
   runtime: nodejs6.10
-  environment:
-    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - dynamodb:Query
-        - dynamodb:Scan
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
-
-functions:
-  create:
-    handler: transactions/create.create
-    events:
-      - http:
-          path: transactions
-          method: post
-          cors: true
-
-  list:
-    handler: transactions/list.list
-    events:
-      - http:
-          path: transactions
-          method: get
-          cors: true
-
-  get:
-    handler: transactions/getTab.getTab
-    events:
-      - http:
-          path: transactions/tab/{year}/{month}
-          method: get
-          cors: true
-
-  getMonth:
-    handler: transactions/get.get
-    events:
-      - http:
-          path: transactions/{id}
-          method: get
-          cors: true
-
-  update:
-    handler: transactions/update.update
-    events:
-      - http:
-          path: transactions/{id}
-          method: put
-          cors: true
-
-  delete:
-    handler: transactions/delete.delete
-    events:
-      - http:
-          path: transactions/{id}
-          method: delete
-          cors: true
-
-resources:
-  Resources:
-    transactionsDynamoDbTable:
-      Type: 'AWS::DynamoDB::Table'
+resources: 
+  Resources: 
+    transactionsDynamoDbTable: 
       DeletionPolicy: Retain
-      Properties:
-        AttributeDefinitions:
-          -
+      Properties: 
+        AttributeDefinitions: 
+          - 
             AttributeName: id
             AttributeType: S
-        KeySchema:
-          -
+        KeySchema: 
+          - 
             AttributeName: id
             KeyType: HASH
-        ProvisionedThroughput:
+        ProvisionedThroughput: 
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-TableName: ${self:provider.environment.DYNAMODB_TABLE}
+      Type: "AWS::DynamoDB::Table"
+service: transactions

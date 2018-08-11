@@ -29,9 +29,11 @@ module.exports.create = (event, context, callback) => {
       note: data.note,
       amount: data.amount,
       createdAt: timestamp,
-      updatedAt: timestamp,
+      updatedAt: timestamp
     },
   };
+
+  console.log(params);
 
   // write the todo to the database
   dynamoDb.put(params, (error) => {
