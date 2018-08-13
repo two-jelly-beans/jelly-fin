@@ -25,7 +25,7 @@ functions:
           cors: true
           method: get
           path: "transactions/{id}"
-    handler: "transactions/{id}"
+    handler: "transactions/get.get"
   getTab: 
     events: 
       - 
