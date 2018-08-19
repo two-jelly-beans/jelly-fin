@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "claudia-api-builder": "^4.1.1",
     "uuid": "^2.0.3"
   }
 }
