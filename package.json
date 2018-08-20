@@ -4,12 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "claudia:create": "claudia create --region us-east-1 --api-module api/transactions --policies api/policies --configure-db",
+    "claudia:update": "claudia update",
+    "claudia:destroy": "claudia destroy",
+    "claudia:reconfigure": "claudia update --configure-db"
   },
-  "author": "",
+  "author": "Jonathan Irvin",
   "license": "ISC",
   "dependencies": {
-    "claudia-api-builder": "^4.1.1",
+    "aws-sdk": "^2.4.11",
+    "claudia-api-builder": "^4",
     "uuid": "^2.0.3"
+  },
+  "devDependencies": {
+    "claudia": "^4",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^3.1.0"
   }
 }
