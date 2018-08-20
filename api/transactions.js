@@ -8,6 +8,11 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient()
 
 module.exports = api
 
+// utility functions
+const getDaysInMonth = (m, y) => {
+  return m===2 ? y & 3 || !(y%25) && y & 15 ? 28 : 29 : 30 + (m+(m>>3)&1)
+}
+
 // create new transaction
 api.post(
   '/transaction',
@@ -45,6 +50,26 @@ api.get('/transaction/{id}', (request) => {
     TableName: request.env.tableName,
     Key: {
       id: id
+    }
+  }
+
+  // post-process dynamo result before returning
+  return dynamoDb
+    .get(params)
+    .promise()
+    .then(response => response.Item)
+})
+
+// get transactions for {month} and {year}
+api.get('/transaction/tab/{year}/{month}', (request) => {
+  const year = request.pathParams.year
+  const month = request.pathParams.month
+  const params = {
+    TableName: request.env.tableName,
+    FilterExpression: 'date between :val1 and :val2',
+    ExpressionAttributeValues: {
+      ":val1" : year +"-"+month+"-01T00:00:00",
+      ":val2" : year +"-"+month+"-"+getDaysInMonth(month, year)+"T00:00:00",
     }
   }
 
