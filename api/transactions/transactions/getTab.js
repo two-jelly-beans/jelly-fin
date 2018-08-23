@@ -11,8 +11,8 @@ const params = {
   TableName: process.env.DYNAMODB_TABLE,
   FilterExpression : 'date between :val1 and :val2',
     ExpressionAttributeValues : {
-        ":val1" : event.pathParameters.year +"-"+event.pathParameters.month+"-01T00:00:00",
-        ":val2" : event.pathParameters.year +"-"+event.pathParameters.month+"-"+getDaysInMonth(event.pathParameters.month,event.pathParameters.year)+"T00:00:00",
+        ':val1' : event.pathParameters.year +'-'+event.pathParameters.month+'-01T00:00:00',
+        ':val2' : event.pathParameters.year +'-'+event.pathParameters.month+'-'+getDaysInMonth(event.pathParameters.month,event.pathParameters.year)+'T00:00:00',
     }
 };
 

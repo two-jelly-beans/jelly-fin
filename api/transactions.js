@@ -60,14 +60,28 @@ api.get('/transaction/{id}', (request) => {
     .then(response => response.Item)
 })
 
+// get all transactions 
+api.get('/transaction/all', (request) => {
+  const params = {
+    TableName: request.env.tableName
+  }
+
+  // post-process dynamo result before returning
+  return dynamoDb
+    .scan(params)
+    .promise()
+    .then(response => response.Items)
+})
+
 // get transactions for {month} and {year}
 api.get('/transaction/tab/{year}/{month}', (request) => {
   const year = request.pathParams.year
   const month = request.pathParams.month
   const params = {
     TableName: request.env.tableName,
-    FilterExpression: 'date between :val1 and :val2',
+    FilterExpression: ':d between :val1 and :val2',
     ExpressionAttributeValues: {
+      ":d": "date",
       ":val1" : year +"-"+month+"-01T00:00:00",
       ":val2" : year +"-"+month+"-"+getDaysInMonth(month, year)+"T00:00:00",
     }
@@ -75,9 +89,9 @@ api.get('/transaction/tab/{year}/{month}', (request) => {
 
   // post-process dynamo result before returning
   return dynamoDb
-    .get(params)
+    .scan(params)
     .promise()
-    .then(response => response.Item)
+    .then(response => response.Items)
 })
 
 // delete transaction with {id}
