@@ -85,8 +85,8 @@ api.get('/transaction/tab/{year}/{month}', (request) => {
     },
     ExpressionAttributeValues: {
       ':d': 'date',
-      ':val1': year +'-'+month+'-01T00:00:00',
-      ':val2': year +'-'+month+'-'+getDaysInMonth(month, year)+'T00:00:00'
+      ':val1': year +'-'+month+'-01',
+      ':val2': year +'-'+month+'-'+getDaysInMonth(month, year)
     }
   }
 
