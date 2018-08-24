@@ -60,7 +60,7 @@ api.get('/transaction/{id}', (request) => {
     .then(response => response.Item)
 })
 
-// get all transactions 
+// get all transactions
 api.get('/transaction/all', (request) => {
   const params = {
     TableName: request.env.tableName
@@ -79,19 +79,30 @@ api.get('/transaction/tab/{year}/{month}', (request) => {
   const month = request.pathParams.month
   const params = {
     TableName: request.env.tableName,
-    FilterExpression: ':d between :val1 and :val2',
+    KeyConditionExpression: '#date between :val1 and :val2',
+    ExpressionAttributeNames: {
+      '#date': 'date'
+    },
     ExpressionAttributeValues: {
-      ":d": "date",
-      ":val1" : year +"-"+month+"-01T00:00:00",
-      ":val2" : year +"-"+month+"-"+getDaysInMonth(month, year)+"T00:00:00",
+      ':d': 'date',
+      ':val1': year +'-'+month+'-01T00:00:00',
+      ':val2': year +'-'+month+'-'+getDaysInMonth(month, year)+'T00:00:00'
     }
   }
 
   // post-process dynamo result before returning
-  return dynamoDb
-    .scan(params)
-    .promise()
-    .then(response => response.Items)
+  dynamoDb.query(params, (err, data) => {
+    if (err) {
+      console.error('Unable to query. Error:', JSON.stringify(err, null, 2))
+      return 'Unable to query. Error: '+ JSON.stringify(err, null, 2)
+    } else {
+      console.log('Query succeeded.')
+      data.Items.forEach((item) => {
+        console.log(' -', item.year + ': ' + item.title)
+      })
+      return data.Items
+    }
+  })
 })
 
 // delete transaction with {id}
