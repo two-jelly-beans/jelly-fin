@@ -25,7 +25,7 @@ We don't have tests yet, but we will eventually. :)
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+We need some CI/CD pipeline, but that's in the works!
 
 ## Built With
 
