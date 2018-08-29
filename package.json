@@ -11,7 +11,7 @@
     "claudia:reconfigure": "claudia update --configure-db"
   },
   "author": "Jonathan Irvin",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "dependencies": {
     "aws-sdk": "^2.4.11",
     "claudia-api-builder": "^4",
