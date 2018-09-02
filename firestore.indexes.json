@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionId": "transactions",
+      "state": "READY",
+      "fields": [
+        {
+          "fieldPath": "date",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "amount",
+          "mode": "DESCENDING"
+        }
+      ]
+    }
+  ]
+}
