@@ -1,8 +1,11 @@
 # Jelly Fin
 
+<!-- Badges -->
 [![Join the chat at https://gitter.im/jellyfin/Lobby](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/jellyfin/Lobby)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/jonathan-irvin/jelly-fin/issues)
+[![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
+<!-- End Badges -->
 ---
 
 Finances are hard.  It's one of the first _adulting_ things everyone has to wrestle with.  So, let's make it easy and automate it.  Over the course of several years, my wife and I have tracked our finances using a forecasting method and had done it all within a spreadsheet.  The time came where I wanted to take this concept and make it mobile using serverless architecture and clean design.
