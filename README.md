@@ -1,6 +1,7 @@
 # Jelly Fin
 
 [![Join the chat at https://gitter.im/jellyfin/Lobby](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/jellyfin/Lobby)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) 
 
 ---
 
