@@ -27,6 +27,8 @@
     "react-test-renderer": "16.3.1"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
