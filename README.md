@@ -6,6 +6,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/jonathan-irvin/jelly-fin/issues)
 [![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
 [![Build Status](https://travis-ci.org/jonathan-irvin/jelly-fin.svg?branch=master)](https://travis-ci.org/jonathan-irvin/jelly-fin)
+[![codecov](https://codecov.io/gh/jonathan-irvin/jelly-fin/branch/master/graph/badge.svg)](https://codecov.io/gh/jonathan-irvin/jelly-fin)
 <!-- End Badges -->
 ---
 
