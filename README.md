@@ -1,12 +1,12 @@
 # Jelly Fin
 
 <!-- Badges -->
-[![Join the chat at https://gitter.im/jellyfin/Lobby](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/jellyfin/Lobby)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/jonathan-irvin/jelly-fin/issues)
+[![Join the chat at https://gitter.im/jellyfin/Lobby](https://badgen.net/badge/chat/on%20gitter/cyan)](https://gitter.im/jellyfin/Lobby)
+[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com) 
+[![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jonathan-irvin/jelly-fin/issues)
 [![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
-[![Build Status](https://travis-ci.org/jonathan-irvin/jelly-fin.svg?branch=master)](https://travis-ci.org/jonathan-irvin/jelly-fin)
-[![codecov](https://codecov.io/gh/jonathan-irvin/jelly-fin/branch/master/graph/badge.svg)](https://codecov.io/gh/jonathan-irvin/jelly-fin)
+[![Build Status](https://badgen.net/travis/jonathan-irvin/jelly-fin)](https://travis-ci.org/jonathan-irvin/jelly-fin)
+[![codecov](https://badgen.net/codecov/c/github/jonathan-irvin/jelly-fin)](https://codecov.io/gh/jonathan-irvin/jelly-fin)
 <!-- End Badges -->
 ---
 
@@ -30,9 +30,13 @@ Node v8.x.x or use [NVM](https://github.com/creationix/nvm#installation)
 
 After installing all prerequisites and dependencies, just run `npm test`
 
+## Dependencies
+
+Dependency PRs are automagically opened using [Dependabot](https://dependabot.com/https://dependabot.com/).  We want to make sure the app stays green by ensuring the build doesn't break when dependencies are bumped and each dependency is well tested to ensure stability.
+
 ## Deployment
 
-Handled by TravisCI
+Handled by TravisCI.  Checkout [.travis.yml](.travis.yml) for configuration details.  Current build status: [![Build Status](https://badgen.net/travis/jonathan-irvin/jelly-fin)](https://travis-ci.org/jonathan-irvin/jelly-fin)
 
 ## Built With
 
@@ -51,9 +55,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Jonathan Irvin** - *Initial work* - [Jelly Fin](https://github.com/jonathan-irvin/jelly-fin)
 
-See also the list of [contributors](https://github.com/jonathan-irvin/jelly-fin/contributors) who participated in this project.
+See also the list of all [![contributors](https://badgen.net/github/contributors/jonathan-irvin/jelly-fin)](https://github.com/jonathan-irvin/jelly-fin/contributors) who participated in this project.
 
-## License
+## License [![license](https://badgen.net/github/license/jonathan-irvin/jelly-fin)](LICENSE)
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
 
