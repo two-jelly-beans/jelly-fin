@@ -18,28 +18,26 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-For the API:
+Node v8.x.x or use [NVM](https://github.com/creationix/nvm#installation)
 
-1. [Install NVM and download Node v6.x.x. LTS](https://github.com/creationix/nvm#installation)
-1. [Install and configure ClaudiaJS](https://claudiajs.com/tutorials/installing.html)
-
-### Installing
+### Installing and Running
 
 1. Clone the repo.
 2. Run `npm install` to cover any dependencies.
-3. Run `npm run claudia:create` to install backend into AWS.
+3. Run `npm start` and follow the prompts to run the App in Expo.
 
 ## Running the tests
 
-We don't have tests yet, but we will eventually. :)
+After installing all prerequisites and dependencies, just run `npm test`
 
 ## Deployment
 
-We need some CI/CD pipeline, but that's in the works!
+Handled by TravisCI
 
 ## Built With
 
-* [ClaudiaJS](https://claudiajs.com)
+* React Native
+* Firebase
 
 ## Contributing
 
