@@ -16,7 +16,10 @@
   "dependencies": {
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.5",
+    "uuid": "^3.3.2",
   },
   "devDependencies": {
     "react-native-scripts": "1.14.0",
