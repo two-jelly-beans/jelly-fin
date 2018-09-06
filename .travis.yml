@@ -6,6 +6,8 @@ cache:
     - node_modules
 install:
   - npm install -g codecov
+  - npm install -g jest
+  - npm install -g istanbul
 script:
   - npm test
   - npm run build
