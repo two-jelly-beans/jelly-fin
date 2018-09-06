@@ -4,9 +4,13 @@ node_js:
 cache:
   directories:
     - node_modules
+install:
+  - npm install -g codecov
 script:
   - npm test
   - npm run build
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov
 notifications:
   webhooks:
     urls:
