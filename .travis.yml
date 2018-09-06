@@ -7,12 +7,10 @@ cache:
 install:
   - npm install -g codecov
   - npm install -g jest
-  - npm install -g istanbul
   - npm install
 script:
   - npm test
   - npm run build
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - codecov
 notifications:
   webhooks:
