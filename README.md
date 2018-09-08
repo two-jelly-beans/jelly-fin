@@ -1,7 +1,7 @@
 # Jelly Fin
 
 <!-- Badges -->
-[![Join the chat at https://gitter.im/jellyfin/Lobby](https://badgen.net/badge/chat/on%20gitter/cyan)](https://gitter.im/jellyfin/Lobby)
+[![Discord](https://badgen.net/badge/chat/on%20Discord/cyan)](https://discord.gg/xveZ3FT)
 [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com) 
 [![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jonathan-irvin/jelly-fin/issues)
 [![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
