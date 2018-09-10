@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "jelly-fin-executor",
+    "name": "jelly-fin",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "89yosf0xph",
+    "module": "api/transactions"
+  }
+}
