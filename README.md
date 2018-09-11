@@ -18,13 +18,27 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Node v8.x.x or use [NVM](https://github.com/creationix/nvm#installation)
+* Node v8.x.x or use [NVM](https://github.com/creationix/nvm#installation)
+* [A Firebase project](https://firebase.google.com/console)
+
+**For iOS**
+*  [Cocoapods](https://guides.cocoapods.org/using/getting-started.html)
+*  [Xcode](https://developer.apple.com/xcode/)
+* Firebase project's [GoogleService-Info.plist](https://firebase.google.com/docs/ios/setup#add_firebase_to_your_app) file
+
+**For Android**
+* Connected device or emulator
+* Firebase project's [google-services.json](https://firebase.google.com/docs/android/setup#add_firebase_to_your_app) file
+
 
 ### Installing and Running
 
 1. Clone the repo.
 2. Run `npm install` to cover any dependencies.
-3. Run `npm start` and follow the prompts to run the App in Expo.
+3. `cd ios && pod install` to install iOS dependencies
+4. `cd ..`
+5. Enter `react-native start` to start the server
+6. Open a new tab/terminal and run the project for the desired platform: `react-native run-ios` or `react-native run-android`
 
 ## Running the tests
 
