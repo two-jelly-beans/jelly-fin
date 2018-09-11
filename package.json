@@ -4,30 +4,26 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "author": "Jonathan Irvin",
   "license": "GPL-3.0",
   "dependencies": {
-    "expo": "^29.0.0",
-    "react": "16.5.0",
-    "react-native": "~0.55.2",
-    "firebase-admin": "^6.0.0",
-    "firebase-functions": "^2.0.5",
-    "uuid": "^3.3.2"
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-firebase": "^4.3.8"
   },
   "devDependencies": {
-    "react-native-scripts": "1.14.0",
-    "jest-expo": "~29.0.0",
-    "react-test-renderer": "16.5.0"
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^5",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.3.0",
+    "jest": "23.5.0",
+    "react-test-renderer": "16.4.1"
   },
   "jest": {
-    "preset": "jest-expo",
+    "preset": "react-native",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   }
