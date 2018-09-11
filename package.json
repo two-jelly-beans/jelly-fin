@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "react-native-scripts": "1.14.0",
-    "jest-expo": "~29.0.0",
+    "jest-expo": "~30.0.0",
     "react-test-renderer": "16.5.0"
   },
   "jest": {
