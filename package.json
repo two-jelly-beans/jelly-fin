@@ -14,7 +14,7 @@
   "author": "Jonathan Irvin",
   "license": "GPL-3.0",
   "dependencies": {
-    "expo": "^29.0.0",
+    "expo": "^29.0.1",
     "react": "16.5.0",
     "react-native": "~0.55.2",
     "firebase-admin": "^6.0.0",
