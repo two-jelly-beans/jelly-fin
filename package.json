@@ -5,8 +5,12 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "test": "jest",
-    "clean": "rm -rf node_modules && npm install"
+    "ios:install": "cd ios && pod install && cd ..",
+    "postinstall": "node -v; npm -v",
+    "clean": "rm -rf node_modules ios/Pods && npm install"
   },
   "author": "Jonathan Irvin",
   "license": "GPL-3.0",
