@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=61e6d3d759554f688e3e56e38d382dd1099c895a724af34463e89ff314728d98
 language: node_js
 node_js:
   - "stable"
@@ -11,7 +14,7 @@ install:
 script:
   - npm test
   - codecov
-  - nyc --reporter=lcov yarn run unit
+  - nyc --reporter=lcov jest
 after_success:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
