@@ -1,14 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, {Component} from 'react';
-import {Button, Platform, StyleSheet, Text, View} from 'react-native';
-// import firebase from 'react-native-firebase';
+// @flow
+import React, { Component } from 'react';
+import { Alert, Button, Platform, StyleSheet, Text, View } from 'react-native';
+import firebase from 'react-native-firebase';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,18 +10,20 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-export default class App extends React.Component {
+export default class App extends Component {
   db = firebase.firestore()
   addDocument = () => {
     this.db.collection('test').add({
       text: 'Test',
       date: new Date().getTime()
     })
+      .then(() => Alert.alert('Success!', 'The document was added.'))
+      .catch(() => Alert.alert('Error!', 'An error ocurred adding the document.'))
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>Welcome to Jelly Fin!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Button

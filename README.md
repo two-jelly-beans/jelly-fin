@@ -23,23 +23,32 @@ These instructions will get you a copy of the project up and running on your loc
 * [A Firebase project](https://firebase.google.com/console)
 
 **For iOS**
-*  [Cocoapods](https://guides.cocoapods.org/using/getting-started.html)
-*  [Xcode](https://developer.apple.com/xcode/)
+Remember that you need to have Mac OS in order to develop for iOS
+*  [Cocoapods](https://guides.cocoapods.org/using/getting-started.html) (Only for Mac OS)
+*  [Xcode](https://developer.apple.com/xcode/) (Only for Mac OS)
 * Firebase project's [GoogleService-Info.plist](https://firebase.google.com/docs/ios/setup#add_firebase_to_your_app) file
 
 **For Android**
 * Connected device or emulator
 * Firebase project's [google-services.json](https://firebase.google.com/docs/android/setup#add_firebase_to_your_app) file
 
+### Setting up Firebase
+** For Android**
+* Put your `google-service.json` file inside the android/app/ folder
+
+** For iOS **
+* Open `ios/JellyFin.xcworkspace` in Xcode and right click on the folder `JellyFin` and "Add files to JellyFin"
+* Check "Copy items of needed" option
+* Select your `GoogleService-Info.plist`
+
 
 ### Installing and Running
 
 1. Clone the repo.
 2. Run `npm install` to cover any dependencies.
-3. `cd ios && pod install` to install iOS dependencies
-4. `cd ..`
-5. Enter `react-native start` to start the server
-6. Open a new tab/terminal and run the project for the desired platform: `react-native run-ios` or `react-native run-android`
+3. If are on a Mac OS: Enter `npm run ios:install`
+4. Enter `npm start` to start the server
+6. Open a new tab/terminal and run the project for the desired platform: `npm run ios` or `npm run android`
 
 ## Running the tests
 
