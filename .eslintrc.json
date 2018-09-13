@@ -4,12 +4,12 @@
     "space-infix-ops": "off"
   },
 
-  "plugins": ["react", "react-native"],
+  "plugins": ["react", "react-native","flowtype"],
   "ecmaFeatures": {
     "jsx": true
   },
   "env": {
     "react-native/react-native": true
   },
-  "extends": ["plugin:react-native/all"]
+  "extends": ["plugin:react-native/all","plugin:flowtype/recommended"]
 }

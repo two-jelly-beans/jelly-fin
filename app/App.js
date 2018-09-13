@@ -17,8 +17,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends React.Component {
   db = firebase.firestore()
   addDocument = () => {
     this.db.collection('test').add({
