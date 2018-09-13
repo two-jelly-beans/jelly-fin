@@ -8,10 +8,11 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
 # Lock files
 yarn.lock
 package-lock.json
-
+Podfile.lock
 
 # Runtime data
 pids
@@ -98,6 +99,7 @@ ios/JellyFin/GoogleService-Info.plist
 
 # Xcode
 #
+Pods/
 build/
 *.pbxuser
 !default.pbxuser
