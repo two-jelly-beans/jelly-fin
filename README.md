@@ -58,15 +58,14 @@ Remember that you need to have Mac OS in order to develop for iOS
 4. If you are on mac OS, run `npm run ios:install`
 5. You should now be able to run using `npm start` and `npm run ios` or `npm run android`
 
-
-## Running the tests
-
-After installing all prerequisites and dependencies, just run `npm test`
-
 ### Common Issues:
 
 If installation isn't working for you, check the following:
 1. Your version of node (v 8.x.x) & npm(v 6.x.x): run `node -v` & `npm -v`.
+
+## Running the tests
+
+After installing all prerequisites and dependencies, just run `npm test`
 
 ## Dependencies
 
