@@ -9,6 +9,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Lock files
+yarn.lock
+package-lock.json
+Podfile.lock
+
 # Runtime data
 pids
 *.pid
@@ -83,3 +88,40 @@ typings/
 # End of https://www.gitignore.io/api/node,serverless
 /.expo
 /.idea
+
+# Firebase setup files
+android/app/google-services.json
+ios/JellyFin/GoogleService-Info.plist
+
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+Pods/
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
