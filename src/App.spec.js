@@ -1,12 +1,12 @@
-// import React from 'react';
-// import renderer from 'react-test-renderer';
-// import App from './App';
+import React from 'react';
+import App from './App';
+import '@firebase/firestore';
+import renderer from 'react-test-renderer';
 
-// xtest('App matches Snapshot', () => {
-//   const component = renderer.create(<App />);
-//   let tree = component.toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+it('renders without crashing', () => {
+  const rendered = renderer.create(<App />).toJSON();
+  expect(rendered).toBeTruthy();
+});
 
 test('smoke test', () => {
   expect(true).toBeTruthy();
