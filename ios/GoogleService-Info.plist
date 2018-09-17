@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>717905882684-afvhd3kcs324f8uoda2asm16lm6s6mbs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.717905882684-afvhd3kcs324f8uoda2asm16lm6s6mbs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAAv9kScW3iXlcksC0FAIGKTZ-eWMR-olo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>717905882684</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sublimegeek.jellyfin</string>
+	<key>PROJECT_ID</key>
+	<string>jelly-fin</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jelly-fin.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:717905882684:ios:f476232d1d3c34dc</string>
+	<key>DATABASE_URL</key>
+	<string>https://jelly-fin.firebaseio.com</string>
+</dict>
+</plist>
