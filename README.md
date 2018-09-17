@@ -5,7 +5,7 @@
 [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com) 
 [![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jonathan-irvin/jelly-fin/issues)
 [![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
-[![Build Status](https://badgen.net/travis/jonathan-irvin/jelly-fin)](https://travis-ci.org/jonathan-irvin/jelly-fin)
+[![Build Status](https://badgen.net/travis/jelly-fin/jelly-fin)](https://travis-ci.com/jelly-fin/jelly-fin)
 [![codecov](https://badgen.net/codecov/c/github/jonathan-irvin/jelly-fin)](https://codecov.io/gh/jonathan-irvin/jelly-fin)
 [![Maintainability](https://api.codeclimate.com/v1/badges/79a0ff74669610205478/maintainability)](https://codeclimate.com/github/jonathan-irvin/jelly-fin/maintainability)
 <!-- End Badges -->
