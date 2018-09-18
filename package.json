@@ -46,7 +46,7 @@
     },
     "moduleNameMapper": {
       "\\.(scss)$": "<rootDir>/node_modules/jest-css-modules"
-    }
+    },
     "setupTestFrameworkScriptFile": "./src/mocks/firebase.mock",
     "automock": false
   }
