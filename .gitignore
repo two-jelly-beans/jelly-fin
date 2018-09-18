@@ -92,6 +92,8 @@ typings/
 # Firebase setup files
 android/app/google-services.json
 ios/JellyFin/GoogleService-Info.plist
+ios/GoogleService-Info.plist
+
 
 # OSX
 #
