@@ -2,7 +2,7 @@
 
 <!-- Badges -->
 [![Discord](https://badgen.net/badge/chat/on%20Discord/cyan)](https://discord.gg/xveZ3FT)
-[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com) 
+[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
 [![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jonathan-irvin/jelly-fin/issues)
 [![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
 [![Build Status](https://badgen.net/travis/jelly-fin/jelly-fin)](https://travis-ci.com/jelly-fin/jelly-fin)
@@ -50,6 +50,19 @@ Remember that you need to have Mac OS in order to develop for iOS
 4. Enter `npm start` to start the server
 6. Open a new tab/terminal and run the project for the desired platform: `npm run ios` or `npm run android`
 
+### Performing a clean reinstall
+1a. Run `git pull` to make sure your project directory is up to date.
+1b. If you want to nuke everything and start over, you can delete the local repo and clone again.
+2. Run `npm run clean` to delete the node module & reinstall dependencies
+3. At this point, verify that you properly followed the steps in "Setting up Firebase" above
+4. If you are on mac OS, run `npm run ios:install`
+5. You should now be able to run using `npm start` and `npm run ios` or `npm run android`
+
+### Common Issues:
+
+If installation isn't working for you, check the following:
+1. Your version of node (v 8.x.x) & npm(v 6.x.x): run `node -v` & `npm -v`.
+
 ## Running the tests
 
 After installing all prerequisites and dependencies, just run `npm test`
@@ -73,7 +86,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jonathan-irvin/jelly-fin/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jonathan-irvin/jelly-fin/tags).
 
 ## Authors
 
