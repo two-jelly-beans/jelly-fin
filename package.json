@@ -42,7 +42,7 @@
       "cobertura"
     ],    
     "transform": {
-      ".*": "'^.+\\.(js|jsx)$': 'babel-jest'"
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest"
     },
     "moduleNameMapper": {
       "\\.(scss)$": "<rootDir>/node_modules/jest-css-modules"
