@@ -1,20 +1,18 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=61e6d3d759554f688e3e56e38d382dd1099c895a724af34463e89ff314728d98
+os:
+  - linux
+  - osx
 language: node_js
 node_js:
   - "stable"
 cache:
   directories:
     - node_modules
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
 install:
-  - npm install -g codecov
-  - npm install -g jest
-  - npm install -g nyc
+  - npm install -g codecov jest
 script:
-  - npm test
-  - codecov
-  - nyc --reporter=lcov jest
+  - npm install
 after_success:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
@@ -27,6 +25,7 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
