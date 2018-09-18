@@ -51,7 +51,7 @@ Remember that you need to have Mac OS in order to develop for iOS
 6. Open a new tab/terminal and run the project for the desired platform: `npm run ios` or `npm run android`
 
 
-** For Android **
+#### For Android
 * Accepting SDK Licenses:
     * Open Android SDK Manager - Make sure versions that need acceptance of licensing are installed and updated
     * Open a terminal and run `sdkmanager --licenses`
