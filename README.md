@@ -50,6 +50,13 @@ Remember that you need to have Mac OS in order to develop for iOS
 4. Enter `npm start` to start the server
 6. Open a new tab/terminal and run the project for the desired platform: `npm run ios` or `npm run android`
 
+
+** For Android **
+* Accepting SDK Licenses:
+    * Open Android SDK Manager - Make sure versions that need acceptance of licensing are installed and updated
+    * Open a terminal and run `sdkmanager --licenses`
+    * If exception is thrown for main thread when running the above command, navigate to $ANDROID_HOME/tools/bin open sdkmanager.  Find `DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME"'` and make it `DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME" -XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'`
+
 ### Performing a clean reinstall
 1a. Run `git pull` to make sure your project directory is up to date.
 1b. If you want to nuke everything and start over, you can delete the local repo and clone again.
