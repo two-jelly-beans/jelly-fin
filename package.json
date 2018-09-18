@@ -40,10 +40,13 @@
       "text",
       "json",
       "cobertura"
-    ],
+    ],    
     "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+      ".*": "'^.+\\.(js|jsx)$': 'babel-jest'"
     },
+    "moduleNameMapper": {
+      "\\.(scss)$": "<rootDir>/node_modules/jest-css-modules"
+    }
     "setupTestFrameworkScriptFile": "./src/mocks/firebase.mock",
     "automock": false
   }
