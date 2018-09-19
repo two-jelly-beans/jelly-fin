@@ -1,63 +1,62 @@
 {
-	"name": "jelly-fin",
-	"version": "0.1.0",
-	"description": "",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"ios": "react-native run-ios",
-		"android": "react-native run-android",
-		"test": "jest",
-		"ios:install": "cd ios && pod install && cd ..",
-		"postinstall": "node -v; npm -v",
-		"clean": "rm -rf node_modules ios/Pods && npm install"
-	},
-	"author": "Jonathan Irvin",
-	"license": "GPL-3.0",
-	"dependencies": {
-		"react": "^16.5.1",
-		"react-native": "0.56.0",
-		"react-native-firebase": "^4.3.8"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.0.1",
-		"babel-bridge": "^1.12.11",
-		"babel-core": "^7.0.0-bridge.0",
-		"babel-eslint": "^9.0.0",
-		"babel-jest": "^23.6.0",
-		"babel-preset-react-native": "^5.0.2",
-		"eslint-plugin-flowtype": "^2.50.0",
-		"eslint-plugin-react": "^7.11.1",
-		"eslint-plugin-react-native": "^3.3.0",
-		"jest": "^23.6.0",
-		"react-test-renderer": "^16.5.1"
-	},
-	"jest": {
-		"coverageDirectory": "./coverage/",
-		"collectCoverage": true,
-		"coverageReporters": [
-			"lcov",
-			"text",
-			"json",
-			"cobertura"
-		],
-		"moduleDirectories": [
-			"node_modules",
-			"<rootDir>"
-		],
-		"transform": {
-			"^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-			".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-		},
-		"transformIgnorePatterns": [
-			"node_modules/(?!(react-native|glamorous-native|react-native-global-props|react-native-elements|react-native-vector-icons|react-native-side-menu|react-native-tab-navigator|react-native-animatable|react-navigation)/)"
-		],
-		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-		"moduleFileExtensions": [
-			"ts",
-			"tsx",
-			"js",
-			"json"
-		]
-	}
+  "name": "jelly-fin",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "test": "jest",
+    "ios:install": "cd ios && pod install && cd ..",
+    "postinstall": "node -v; npm -v",
+    "clean": "rm -rf node_modules ios/Pods && npm install"
+  },
+  "author": "Jonathan Irvin",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-native": "0.56.0",
+    "react-native-firebase": "^4.3.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "babel-bridge": "^1.12.11",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-react-native": "^5.0.2",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.3.0",
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.5.1"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "json",
+      "cobertura"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|glamorous-native|react-native-global-props|react-native-elements|react-native-vector-icons|react-native-side-menu|react-native-tab-navigator|react-native-animatable|react-navigation)/)"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
 }
