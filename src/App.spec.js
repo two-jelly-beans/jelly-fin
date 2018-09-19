@@ -1,13 +1,19 @@
-import React from 'react';
-import App from './App';
-import '@firebase/firestore';
-import renderer from 'react-test-renderer';
+import "react-native";
+import React from "react";
+import App from "App";
 
-it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
-  expect(rendered).toBeTruthy();
+import renderer from "react-test-renderer";
+
+describe("Jest", () => {
+  it("should expect true to be truthy", () => {
+    expect(true).toBeTruthy();
+  });
 });
 
-test('smoke test', () => {
-  expect(true).toBeTruthy();
+describe("App", () => {
+  it("should render", () => {
+    const component = renderer.create(<App />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

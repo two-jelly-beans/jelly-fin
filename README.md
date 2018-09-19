@@ -2,13 +2,13 @@
 
 <!-- Badges -->
 [![Discord](https://badgen.net/badge/chat/on%20Discord/cyan)](https://discord.gg/xveZ3FT)
-[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com) 
-[![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jonathan-irvin/jelly-fin/issues)
-[![Inline docs](http://inch-ci.org/github/jonathan-irvin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jonathan-irvin/jelly-fin)
-[![Build Status](https://badgen.net/travis/jonathan-irvin/jelly-fin)](https://travis-ci.org/jonathan-irvin/jelly-fin)
-[![codecov](https://badgen.net/codecov/c/github/jonathan-irvin/jelly-fin)](https://codecov.io/gh/jonathan-irvin/jelly-fin)
-[![Maintainability](https://api.codeclimate.com/v1/badges/79a0ff74669610205478/maintainability)](https://codeclimate.com/github/jonathan-irvin/jelly-fin/maintainability)
+[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
+[![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jelly-fin/jelly-fin/issues)
+[![Inline docs](http://inch-ci.org/github/jelly-fin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jelly-fin/jelly-fin)
+[![Build Status](https://travis-ci.com/jelly-fin/jelly-fin.svg?branch=master)](https://travis-ci.com/jelly-fin/jelly-fin)
+[![codecov](https://codecov.io/gh/jelly-fin/jelly-fin/branch/master/graph/badge.svg)](https://codecov.io/gh/jelly-fin/jelly-fin)
 <!-- End Badges -->
+
 ---
 
 Finances are hard.  It's one of the first _adulting_ things everyone has to wrestle with.  So, let's make it easy and automate it.  Over the course of several years, my wife and I have tracked our finances using a forecasting method and had done it all within a spreadsheet.  The time came where I wanted to take this concept and make it mobile using serverless architecture and clean design.
@@ -50,6 +50,26 @@ Remember that you need to have Mac OS in order to develop for iOS
 4. Enter `npm start` to start the server
 6. Open a new tab/terminal and run the project for the desired platform: `npm run ios` or `npm run android`
 
+
+#### For Android
+* Accepting SDK Licenses:
+    * Open Android SDK Manager - Make sure versions that need acceptance of licensing are installed and updated
+    * Open a terminal and run `sdkmanager --licenses`
+    * If exception is thrown for main thread when running the above command, navigate to $ANDROID_HOME/tools/bin open sdkmanager.  Find `DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME"'` and make it `DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME" -XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'`
+
+### Performing a clean reinstall
+1. Run `git pull` to make sure your project directory is up to date.
+   1. If you want to nuke everything and start over, you can delete the local repo and clone again.
+1. Run `npm run clean` to delete the node module & reinstall dependencies
+   1. At this point, verify that you properly followed the steps in "Setting up Firebase" above
+1. If you are on mac OS, run `npm run ios:install`
+1. You should now be able to run using `npm start` and `npm run ios` or `npm run android`
+
+### Common Issues:
+
+If installation isn't working for you, check the following:
+1. Your version of node (v 8.x.x) & npm(v 6.x.x): run `node -v` & `npm -v`.
+
 ## Running the tests
 
 After installing all prerequisites and dependencies, just run `npm test`
@@ -60,7 +80,7 @@ Dependency PRs are automagically opened using [Dependabot](https://dependabot.co
 
 ## Deployment
 
-Handled by TravisCI.  Checkout [.travis.yml](.travis.yml) for configuration details.  Current build status: [![Build Status](https://badgen.net/travis/jonathan-irvin/jelly-fin)](https://travis-ci.org/jonathan-irvin/jelly-fin)
+Handled by TravisCI.  Checkout [.travis.yml](.travis.yml) for configuration details.  Current build status: [![Build Status](https://badgen.net/travis/jelly-fin/jelly-fin)](https://travis-ci.com/jelly-fin/jelly-fin)
 
 ## Built With
 
@@ -73,15 +93,15 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jonathan-irvin/jelly-fin/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jelly-fin/jelly-fin/tags).
 
 ## Authors
 
-* **Jonathan Irvin** - *Initial work* - [Jelly Fin](https://github.com/jonathan-irvin/jelly-fin)
+* **Jonathan Irvin** - *Initial work* - [Jelly Fin](https://github.com/jelly-fin/jelly-fin)
 
-See also the list of all [![contributors](https://badgen.net/github/contributors/jonathan-irvin/jelly-fin)](https://github.com/jonathan-irvin/jelly-fin/contributors) who participated in this project.
+See also the list of all [![contributors](https://badgen.net/github/contributors/jelly-fin/jelly-fin)](https://github.com/jonathan-irvin/jelly-fin/contributors) who participated in this project.
 
-## License [![license](https://badgen.net/github/license/jonathan-irvin/jelly-fin)](LICENSE)
+## License [![license](https://badgen.net/github/license/jelly-fin/jelly-fin)](LICENSE)
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
 
