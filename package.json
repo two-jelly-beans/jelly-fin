@@ -9,7 +9,6 @@
     "android": "react-native run-android",
     "test": "jest",
     "ios:install": "cd ios && pod install && cd ..",
-    "postinstall": "node -v; npm -v",
     "clean": "rm -rf node_modules ios/Pods && npm install"
   },
   "author": "Jonathan Irvin",
