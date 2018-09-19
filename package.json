@@ -16,7 +16,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "react": "^16.5.1",
-    "react-native": "0.56.0",
+    "react-native": "0.57.0",
     "react-native-firebase": "^4.3.8"
   },
   "devDependencies": {
