@@ -20,17 +20,17 @@
     "react-native-firebase": "^4.3.8"
   },
   "devDependencies": {
-    "@babel/core": "7.0.1",
+    "@babel/core": "^7.0.1",
     "babel-bridge": "^1.12.11",
-    "babel-core": "7.0.0-bridge.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
-    "babel-jest": "23.6.0",
+    "babel-jest": "^23.6.0",
     "babel-preset-react-native": "^5.0.2",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-native": "^3.3.0",
-    "jest": "23.6.0",
-    "react-test-renderer": "16.5.1"
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.5.1"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
@@ -42,7 +42,7 @@
       "cobertura"
     ],
     "transform": {
-      "^.+\\.(js|jsx)$": "preprocessor.js"
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     }
   }
 }
