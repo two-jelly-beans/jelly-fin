@@ -2,7 +2,10 @@ language: node_js
 node_js:
   - "stable"
 install:
-  - npm install -g codecov jest react-native-cli nyc
+  - npm install -g codecov 
+  - npm install -g jest 
+  - npm install -g react-native-cli 
+  - npm install -g nyc
 script:
   - npm test
   - codecov
