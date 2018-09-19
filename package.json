@@ -33,7 +33,6 @@
     "react-test-renderer": "16.5.1"
   },
   "jest": {
-    "preset": "react-native",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "coverageReporters": [
