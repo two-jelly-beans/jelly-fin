@@ -1,6 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=61e6d3d759554f688e3e56e38d382dd1099c895a724af34463e89ff314728d98
 language: node_js
 node_js:
   - "stable"
@@ -8,9 +5,7 @@ cache:
   directories:
     - node_modules
 install:
-  - npm install -g codecov
-  - npm install -g jest
-  - npm install -g nyc
+  - npm install -g codecov jest react-native-cli nyc
 script:
   - npm test
   - codecov
