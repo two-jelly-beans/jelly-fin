@@ -2,6 +2,7 @@
 
 <!-- Badges -->
 [![Discord](https://badgen.net/badge/chat/on%20Discord/cyan)](https://discord.gg/xveZ3FT)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=jelly-fin/jelly-fin)](https://dependabot.com)
 [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
 [![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jelly-fin/jelly-fin/issues)
 [![Inline docs](http://inch-ci.org/github/jelly-fin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jelly-fin/jelly-fin)
