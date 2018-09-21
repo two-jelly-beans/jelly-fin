@@ -8,9 +8,9 @@ install:
   - npm install -g nyc
   - npm install react-native
 script:
-  - npm test
+  - npm test --forceExit --detectOpenHandles
   - codecov
-  - nyc --reporter=lcov jest --forceExit --detectOpenHandles  
+  - nyc --reporter=lcov jest  
 after_success:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
