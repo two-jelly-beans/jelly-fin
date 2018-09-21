@@ -32,13 +32,18 @@ db.settings({
 });
 
 // Add a document to a collection
+
+
 db.collection("test-collection").add({
-    title: 'This is the post title...',
-    content: 'This is the test post content. It should be longeeer...',
+    title: 'post title',
+    content: 'This is the test post content.',
     date: new Date(),
 })
-    .then(docRef => console.log('Document written with ID: ', docRef))
-    .catch(error => console.error('Error adding document: ', error));
-
+    .then(docRef => {
+        console.log('Document written with ID: ', docRef);
+    })
+    .catch(error => {
+        console.error('Error adding document: ', error);
+    });
 
 export default app;
