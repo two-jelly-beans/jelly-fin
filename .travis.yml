@@ -6,6 +6,7 @@ install:
   - npm install -g jest 
   - npm install -g react-native-cli 
   - npm install -g nyc
+  - npm install react-native
 script:
   - npm test
   - codecov
