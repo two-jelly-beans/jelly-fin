@@ -1,0 +1,3 @@
+rootProject.name = 'jellyfin'
+
+include ':app'

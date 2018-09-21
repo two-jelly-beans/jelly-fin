@@ -1,0 +1,30 @@
+{
+  "name": "jellyfin",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "ios:install": "cd ios && pod install && cd ..",
+    "clean": "rm -rf node_modules ios/Pods && npm install",
+    "test": "jest"
+  },
+  "dependencies": {
+    "firebase": "^5.5.0",
+    "react": "16.5.0",
+    "react-native": "0.57.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.45.5",
+    "react-test-renderer": "16.5.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
+  }
+}
