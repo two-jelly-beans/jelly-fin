@@ -1,7 +1,10 @@
 {
-  "name": "jellyfin",
+  "name": "jelly-fin",
   "version": "0.0.1",
   "description": "",
+  "author": "Jonathan Irvin",
+  "license": "GPL-3.0",
+  "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios",

@@ -8,7 +8,7 @@ install:
   - npm install -g nyc
   - npm install react-native
 script:
-  - jest --forceExit --detectOpenHandles
+  - jest --detectOpenHandles
   - codecov
   - nyc --reporter=lcov jest  
 after_success:

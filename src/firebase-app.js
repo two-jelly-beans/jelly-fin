@@ -32,8 +32,6 @@ db.settings({
 });
 
 // Add a document to a collection
-
-
 db.collection("test-collection").add({
     title: 'post title',
     content: 'This is the test post content.',
