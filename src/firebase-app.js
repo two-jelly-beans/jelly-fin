@@ -2,10 +2,20 @@ import firebase from '@firebase/app';
 import 'firebase/firestore';
 
 // A config file that contains your firebase project credentials (not included in the repo)
-import config from './firebase-config.json';
+import FIREBASE_CONFIG from './firebase-config.json';
+
+
+const CONFIG = FIREBASE_CONFIG || {
+    apiKey: "AIzaSyAcq_Vr-wbCjctpWIXJdeXBHnQgSqCLRY8",
+    authDomain: "jellyfin-a9ff6.firebaseapp.com",
+    databaseURL: "https://jellyfin-a9ff6.firebaseio.com",
+    projectId: "jellyfin-a9ff6",
+    storageBucket: "",
+    messagingSenderId: "505439361090"
+};
 
 // Initialize Cloud Firestore through Firebase
-const app = firebase.initializeApp(config);
+const app = firebase.initializeApp(CONFIG);
 
 const db = firebase.firestore();
 
