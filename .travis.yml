@@ -6,10 +6,11 @@ install:
   - npm install -g jest 
   - npm install -g react-native-cli 
   - npm install -g nyc
+  - npm install react-native
 script:
-  - npm test
+  - jest --detectOpenHandles
   - codecov
-  - nyc --reporter=lcov jest
+  - nyc --reporter=lcov jest  
 after_success:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
@@ -25,4 +26,4 @@ before_script:
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
-  email: false
+email: false
