@@ -34,10 +34,10 @@ Remember that you need to have Mac OS in order to develop for iOS
 * Firebase project's [google-services.json](https://firebase.google.com/docs/android/setup#add_firebase_to_your_app) file
 
 ### Setting up Firebase
-** For Android**
+**For Android**
 * Put your `google-service.json` file inside the android/app/ folder
 
-** For iOS **
+**For iOS**
 * Open `ios/JellyFin.xcworkspace` in Xcode and right click on the folder `JellyFin` and "Add files to JellyFin"
 * Check "Copy items of needed" option
 * Select your `GoogleService-Info.plist`
