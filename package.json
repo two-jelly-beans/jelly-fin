@@ -1,33 +1,31 @@
 {
-  "name": "jelly-fin",
-  "version": "0.0.1",
-  "description": "",
-  "author": "Jonathan Irvin",
-  "license": "GPL-3.0",
+  "name": "jelly-fin-2",
+  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "ios": "react-native run-ios",
-    "android": "react-native run-android",
-    "ios:install": "cd ios && pod install && cd ..",
-    "clean": "rm -rf node_modules ios/Pods && npm install",
-    "test": "jest"
-  },
   "dependencies": {
-    "firebase": "^5.5.2",
-    "react": "16.5.0",
-    "react-native": "0.57.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
-  "devDependencies": {
-    "babel-jest": "23.6.0",
-    "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.45.5",
-    "react-test-renderer": "16.5.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "jest": {
-    "preset": "react-native",
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
-    }
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
