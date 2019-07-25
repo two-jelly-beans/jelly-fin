@@ -1,33 +1,31 @@
 {
-  "name": "jelly-fin",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "claudia:create": "claudia create --region us-east-1 --api-module api/transactions --policies api/policies --configure-db",
-    "claudia:update": "claudia update",
-    "claudia:destroy": "claudia destroy",
-    "claudia:reconfigure": "claudia update --configure-db"
-  },
-  "author": "Jonathan Irvin",
-  "license": "GPL-3.0",
+  "name": "jelly-fin-2",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "aws-sdk": "^2.4.11",
-    "claudia-api-builder": "^4",
-    "firebase-admin": "^6.0.0",
-    "firebase-functions": "^2.0.5",
-    "uuid": "^2.0.3"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
-  "devDependencies": {
-    "claudia": "^4",
-    "eslint": "^5.4.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^3.1.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

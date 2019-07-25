@@ -1,7 +1,0 @@
-{
-    "extends": "standard",
-    "rules": {
-        "no-mixed-operators": "off",
-        "space-infix-ops": "off"
-    }
-}
