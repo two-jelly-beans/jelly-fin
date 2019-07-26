@@ -27,7 +27,7 @@ function NavBar(props) {
         <Toolbar>
           <MainMenu />
           <Typography variant="h6" className={classes.title}>
-            Jiffy
+            Jelly Fin
           </Typography>
 
           {user ? (
@@ -36,7 +36,7 @@ function NavBar(props) {
             </Button>
           ) : (
             <Button color="inherit" onClick={signInWithGoogle}>
-              Sign in with Google
+              Sign in
             </Button>
           )}
         </Toolbar>

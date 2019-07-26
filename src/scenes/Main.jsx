@@ -6,7 +6,7 @@ export default class Main extends Component {
   render() {
     const { user } = this.props;
     return (
-      <div style={{ margin: 12 }}>
+      <div >
         {user ? (
           <Grid container spacing={8} justify="center">
             <Grid item xs={12}>

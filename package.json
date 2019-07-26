@@ -28,6 +28,7 @@
     "@semantic-release/github": "^5.4.2",
     "@semantic-release/npm": "^5.1.13",
     "@semantic-release/release-notes-generator": "^7.2.1",
+    "cz-conventional-changelog": "^3.0.2",
     "install": "^0.13.0",
     "npm": "^6.10.1",
     "semantic-release": "^15.13.18"
@@ -80,5 +81,10 @@
         }
       ]
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
