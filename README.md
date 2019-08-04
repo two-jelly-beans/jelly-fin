@@ -5,9 +5,6 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=jelly-fin/jelly-fin)](https://dependabot.com)
 [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
 [![contributions welcome](https://badgen.net/badge/contributions/welcome/green)](https://github.com/jelly-fin/jelly-fin/issues)
-[![Inline docs](http://inch-ci.org/github/jelly-fin/jelly-fin.svg?branch=master)](http://inch-ci.org/github/jelly-fin/jelly-fin)
-[![Build Status](https://travis-ci.com/jelly-fin/jelly-fin.svg?branch=master)](https://travis-ci.com/jelly-fin/jelly-fin)
-[![codecov](https://codecov.io/gh/jelly-fin/jelly-fin/branch/master/graph/badge.svg)](https://codecov.io/gh/jelly-fin/jelly-fin)
 <!-- End Badges -->
 
 ---
@@ -23,48 +20,10 @@ These instructions will get you a copy of the project up and running on your loc
 * Node v8.x.x or use [NVM](https://github.com/creationix/nvm#installation)
 * [A Firebase project](https://firebase.google.com/console)
 
-**For iOS**
-Remember that you need to have Mac OS in order to develop for iOS
-*  [Cocoapods](https://guides.cocoapods.org/using/getting-started.html) (Only for Mac OS)
-*  [Xcode](https://developer.apple.com/xcode/) (Only for Mac OS)
-* Firebase project's [GoogleService-Info.plist](https://firebase.google.com/docs/ios/setup#add_firebase_to_your_app) file
-
-**For Android**
-* Connected device or emulator
-* Firebase project's [google-services.json](https://firebase.google.com/docs/android/setup#add_firebase_to_your_app) file
-
-### Setting up Firebase
-**For Android**
-* Put your `google-service.json` file inside the android/app/ folder
-
-**For iOS**
-* Open `ios/JellyFin.xcworkspace` in Xcode and right click on the folder `JellyFin` and "Add files to JellyFin"
-* Check "Copy items of needed" option
-* Select your `GoogleService-Info.plist`
-
-
 ### Installing and Running
 
 1. Clone the repo.
 2. Run `npm install` to cover any dependencies.
-3. If are on a Mac OS: Enter `npm run ios:install`
-4. Enter `npm start` to start the server
-6. Open a new tab/terminal and run the project for the desired platform: `npm run ios` or `npm run android`
-
-
-#### For Android
-* Accepting SDK Licenses:
-    * Open Android SDK Manager - Make sure versions that need acceptance of licensing are installed and updated
-    * Open a terminal and run `sdkmanager --licenses`
-    * If exception is thrown for main thread when running the above command, navigate to $ANDROID_HOME/tools/bin open sdkmanager.  Find `DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME"'` and make it `DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME" -XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'`
-
-### Performing a clean reinstall
-1. Run `git pull` to make sure your project directory is up to date.
-   1. If you want to nuke everything and start over, you can delete the local repo and clone again.
-1. Run `npm run clean` to delete the node module & reinstall dependencies
-   1. At this point, verify that you properly followed the steps in "Setting up Firebase" above
-1. If you are on mac OS, run `npm run ios:install`
-1. You should now be able to run using `npm start` and `npm run ios` or `npm run android`
 
 ### Common Issues:
 
@@ -79,13 +38,9 @@ After installing all prerequisites and dependencies, just run `npm test`
 
 Dependency PRs are automagically opened using [Dependabot](https://dependabot.com/https://dependabot.com/).  We want to make sure the app stays green by ensuring the build doesn't break when dependencies are bumped and each dependency is well tested to ensure stability.
 
-## Deployment
-
-Handled by TravisCI.  Checkout [.travis.yml](.travis.yml) for configuration details.  Current build status: [![Build Status](https://badgen.net/travis/jelly-fin/jelly-fin)](https://travis-ci.com/jelly-fin/jelly-fin)
-
 ## Built With
 
-* React Native
+* React
 * Firebase
 
 ## Contributing
