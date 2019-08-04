@@ -5,13 +5,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --passWithNoTests",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "@material-ui/icons": "^4.2.1",
-    "axios": "^0.19.0",
     "dotenv": "^8.0.0",
     "firebase": "^6.2.4",
     "react": "^16.8.6",
@@ -19,7 +19,7 @@
     "react-lazy-load": "^3.0.13",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-with-firebase-auth": "^1.0.3"
+    "recompose": "^0.30.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
@@ -36,18 +36,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "release": {
     "branch": "master",
     "plugins": [

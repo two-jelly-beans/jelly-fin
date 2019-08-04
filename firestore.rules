@@ -1,7 +1,35 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write;
+
+    // Custom functions
+    function signedIn() {
+        return request.auth != null;
+    }
+
+    function isAdmin() {
+        return signedIn() &&
+        	'ADMIN'in get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles.values();
+    }
+
+    function isOwner() {
+        return signedIn() && request.auth.uid == resource.data.userId;
+    }
+
+    function isSelf() {
+    	    return signedIn() && request.auth.uid == resource.id;
+    }
+
+    // Rules
+    match /users/{userId} {
+        allow get: if isSelf();
+        allow list: if isAdmin();
+        allow write:  if isSelf() || isAdmin();
+    }
+
+    match /accounts/{accountId} {
+        allow read: if signedIn();
+        allow create: if signedIn();
+        allow update, delete: if signedIn() && isOwner();
     }
   }
 }
