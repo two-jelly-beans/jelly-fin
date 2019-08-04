@@ -31,5 +31,11 @@ service cloud.firestore {
         allow create: if signedIn() && request.resource.data.userId == request.auth.uid
         allow update, delete: if signedIn() && isOwner();
     }
+
+    match /messages/{messageId} {
+        allow read: if signedIn();
+        allow create: if signedIn() && request.resource.data.userId == request.auth.uid
+        allow update, delete: if signedIn() && isOwner();
+    }
   }
 }
