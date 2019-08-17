@@ -7,17 +7,89 @@ import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
-const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <SignInGoogle />
-    <SignInFacebook />
-    <SignInTwitter />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
-);
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
+const useStyles = makeStyles(theme => ({
+  '@global': {
+    body: {
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(1, 0, 0),
+  },
+}));
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Jelly Fin
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const SignInPage = () => {
+  const classes = useStyles();
+  return (
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <SignInForm classes={classes} />
+        <SignInGoogle classes={classes} />
+        <SignInFacebook classes={classes} />
+        <SignInTwitter classes={classes} />
+        <Grid container>
+          <Grid item xs>
+            <PasswordForgetLink />
+          </Grid>
+          <Grid item>
+            <SignUpLink />
+          </Grid>
+        </Grid>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
+  );
+};
 
 const INITIAL_STATE = {
   email: '',
@@ -38,7 +110,6 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
 class SignInFormBase extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...INITIAL_STATE };
   }
 
@@ -49,7 +120,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.DASHBOARD);
       })
       .catch(error => {
         this.setState({ error });
@@ -63,31 +134,57 @@ class SignInFormBase extends Component {
   };
 
   render() {
-    const { email, password, error } = this.state;
+    const { email, password } = this.state;
 
     const isInvalid = password === '' || email === '';
+    const classes = this.props.classes;
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
+      <form
+        className={classes.form}
+        onSubmit={this.onSubmit}
+        noValidate
+      >
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
           value={email}
           onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
+          id="email"
+          label="Email Address"
+          name="email"
+          autoComplete="email"
+          autoFocus
         />
-        <input
-          name="password"
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
           value={password}
           onChange={this.onChange}
+          name="password"
+          label="Password"
           type="password"
-          placeholder="Password"
+          id="password"
+          autoComplete="current-password"
         />
-        <button disabled={isInvalid} type="submit">
+        <FormControlLabel
+          control={<Checkbox value="remember" color="primary" />}
+          label="Remember me"
+        />
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+          disabled={isInvalid}
+        >
           Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
+        </Button>
       </form>
     );
   }
@@ -116,7 +213,7 @@ class SignInGoogleBase extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.DASHBOARD);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -131,10 +228,18 @@ class SignInGoogleBase extends Component {
 
   render() {
     const { error } = this.state;
-
+    const classes = this.props.classes;
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Google</button>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+        >
+          Sign In with Google
+        </Button>
 
         {error && <p>{error.message}</p>}
       </form>
@@ -165,7 +270,7 @@ class SignInFacebookBase extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.DASHBOARD);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -180,10 +285,19 @@ class SignInFacebookBase extends Component {
 
   render() {
     const { error } = this.state;
-
+    const classes = this.props.classes;
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Facebook</button>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+          disabled
+        >
+          Sign In with Facebook
+        </Button>
 
         {error && <p>{error.message}</p>}
       </form>
@@ -214,7 +328,7 @@ class SignInTwitterBase extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.DASHBOARD);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -229,10 +343,19 @@ class SignInTwitterBase extends Component {
 
   render() {
     const { error } = this.state;
-
+    const classes = this.props.classes;
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Twitter</button>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+          disabled
+        >
+          Sign In with Twitter
+        </Button>
 
         {error && <p>{error.message}</p>}
       </form>

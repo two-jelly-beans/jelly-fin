@@ -19,21 +19,22 @@ const SIGN_IN_METHODS = [
     id: 'google.com',
     provider: 'googleProvider',
   },
-  {
-    id: 'facebook.com',
-    provider: 'facebookProvider',
-  },
-  {
-    id: 'twitter.com',
-    provider: 'twitterProvider',
-  },
+  // For future use;
+  // {
+  //   id: 'facebook.com',
+  //   provider: 'facebookProvider',
+  // },
+  // {
+  //   id: 'twitter.com',
+  //   provider: 'twitterProvider',
+  // },
 ];
 
-const AccountPage = () => (
+const ProfilePage = () => (
   <AuthUserContext.Consumer>
     {authUser => (
       <div>
-        <h1>Account: {authUser.email}</h1>
+        <h1>Profile: {authUser.email}</h1>
         <PasswordForgetForm />
         <PasswordChangeForm />
         <LoginManagement authUser={authUser} />
@@ -228,4 +229,4 @@ const condition = authUser => !!authUser;
 export default compose(
   withEmailVerification,
   withAuthorization(condition),
-)(AccountPage);
+)(ProfilePage);
