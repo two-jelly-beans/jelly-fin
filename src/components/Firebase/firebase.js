@@ -93,17 +93,23 @@ class Firebase {
       }
     });
 
-  // *** User API ***
+  // Users
 
   user = uid => this.db.doc(`users/${uid}`);
 
   users = () => this.db.collection('users');
 
-  // *** Message API ***
+  // Messages
 
   message = uid => this.db.doc(`messages/${uid}`);
 
   messages = () => this.db.collection('messages');
+
+  // Accounts
+
+  acccount = uid => this.db.doc(`accounts/${uid}`);
+
+  accounts = () => this.db.collection('accounts');
 }
 
 export default Firebase;

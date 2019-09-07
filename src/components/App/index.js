@@ -17,6 +17,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import AccountsPage from '../Accounts';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,6 +55,7 @@ const App = () => {
         <Route path={ROUTES.DASHBOARD} component={DashboardPage} />
         <Route path={ROUTES.PROFILE} component={ProfilePage} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />
+        <Route path={ROUTES.ACCOUNTS} component={AccountsPage} />
       </div>
     </Router>
   );

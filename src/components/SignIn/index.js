@@ -46,6 +46,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const POST_LOGIN_ROUTE = ROUTES.ACCOUNTS;
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -120,7 +122,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.DASHBOARD);
+        this.props.history.push(POST_LOGIN_ROUTE);
       })
       .catch(error => {
         this.setState({ error });
@@ -213,7 +215,7 @@ class SignInGoogleBase extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.DASHBOARD);
+        this.props.history.push(POST_LOGIN_ROUTE);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -270,7 +272,7 @@ class SignInFacebookBase extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.DASHBOARD);
+        this.props.history.push(POST_LOGIN_ROUTE);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -328,7 +330,7 @@ class SignInTwitterBase extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.DASHBOARD);
+        this.props.history.push(POST_LOGIN_ROUTE);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
