@@ -80,7 +80,13 @@ const NavigationAuth = ({ authUser }) => {
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <Link to={ROUTES.PROFILE} className={classes.menuLink}>
-            My Profile
+            Profile
+          </Link>
+        </MenuItem>
+
+        <MenuItem onClick={handleClose}>
+          <Link to={ROUTES.ACCOUNTS} className={classes.menuLink}>
+            Accounts
           </Link>
         </MenuItem>
 

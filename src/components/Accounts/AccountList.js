@@ -7,19 +7,15 @@ const AccountList = ({
   accounts,
   onEditAccount,
   onRemoveAccount,
-}) => (
-  <ul>
-    {accounts &&
-      accounts.map(account => (
-        <AccountItem
-          authUser={authUser}
-          key={account.uid}
-          account={account}
-          onEditAccount={onEditAccount}
-          onRemoveAccount={onRemoveAccount}
-        />
-      ))}
-  </ul>
-);
+}) =>
+  accounts.map(account => (
+    <AccountItem
+      authUser={authUser}
+      key={account.uid}
+      account={account}
+      onEditAccount={onEditAccount}
+      onRemoveAccount={onRemoveAccount}
+    />
+  ));
 
 export default AccountList;

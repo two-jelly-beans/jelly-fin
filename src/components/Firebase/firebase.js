@@ -107,7 +107,7 @@ class Firebase {
 
   // Accounts
 
-  acccount = uid => this.db.doc(`accounts/${uid}`);
+  account = uid => this.db.doc(`accounts/${uid}`);
 
   accounts = () => this.db.collection('accounts');
 }

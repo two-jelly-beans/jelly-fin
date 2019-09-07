@@ -62,6 +62,7 @@ const AccountsPage = () => {
         </Typography>
         <Accounts />
       </div>
+
       <Box mt={8}>
         <Copyright />
       </Box>

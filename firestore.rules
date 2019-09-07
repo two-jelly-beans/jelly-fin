@@ -15,10 +15,6 @@ service cloud.firestore {
         return signedIn() && request.auth.uid == resource.data.userId;
     }
 
-    function inOwnerList() {
-        return signedIn() && request.auth.uid in resource.data.ownerId;
-    }
-
     function isSelf() {
     	    return signedIn() && request.auth.uid == resource.id;
     }
@@ -31,9 +27,9 @@ service cloud.firestore {
     }
 
     match /accounts/{accountId} {
-        allow read, list: if signedIn() && (inOwnerList() || isOwner());
+        allow read, list: if signedIn() && isOwner();
         allow create: if signedIn() && request.resource.data.userId == request.auth.uid
-        allow update, delete: if signedIn() && isOwner();
+        allow update, delete: if signedIn() && inOwnerList();
     }
 
     match /messages/{messageId} {

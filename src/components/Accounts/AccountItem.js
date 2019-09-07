@@ -1,73 +1,29 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 class AccountItem extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      editMode: false,
-      editText: this.props.message.text,
+      accountName: this.props.account.accountName,
     };
   }
 
-  onToggleEditMode = () => {
-    this.setState(state => ({
-      editMode: !state.editMode,
-      editText: this.props.message.text,
-    }));
-  };
-
-  onChangeEditText = event => {
-    this.setState({ editText: event.target.value });
-  };
-
-  onSaveEditText = () => {
-    this.props.onEditMessage(this.props.message, this.state.editText);
-
-    this.setState({ editMode: false });
-  };
-
   render() {
-    const { authUser, message, onRemoveMessage } = this.props;
-    const { editMode, editText } = this.state;
+    const { account } = this.props;
 
     return (
-      <li>
-        {editMode ? (
-          <input
-            type="text"
-            value={editText}
-            onChange={this.onChangeEditText}
-          />
-        ) : (
-          <span>
-            <strong>{message.userId}</strong> {message.text}
-            {message.editedAt && <span>(Edited)</span>}
-          </span>
-        )}
-
-        {authUser.uid === message.userId && (
-          <span>
-            {editMode ? (
-              <span>
-                <button onClick={this.onSaveEditText}>Save</button>
-                <button onClick={this.onToggleEditMode}>Reset</button>
-              </span>
-            ) : (
-              <button onClick={this.onToggleEditMode}>Edit</button>
-            )}
-
-            {!editMode && (
-              <button
-                type="button"
-                onClick={() => onRemoveMessage(message.uid)}
-              >
-                Delete
-              </button>
-            )}
-          </span>
-        )}
-      </li>
+      <Button
+        fullWidth
+        variant="contained"
+        color="primary"
+        component={Link}
+        to={'/account/' + account.uid}
+      >
+        {account.accountName}
+      </Button>
     );
   }
 }

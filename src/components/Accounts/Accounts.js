@@ -8,7 +8,6 @@ class Accounts extends Component {
     super(props);
 
     this.state = {
-      text: '',
       loading: false,
       accounts: [],
       limit: 5,
@@ -41,6 +40,7 @@ class Accounts extends Component {
           this.setState({ accounts: null, loading: false });
         }
       });
+    console.log(this.unsubscribe);
   };
 
   componentWillUnmount() {
@@ -51,7 +51,7 @@ class Accounts extends Component {
     this.setState({ text: event.target.value });
   };
 
-  onCreateMessage = (event, authUser) => {
+  onCreateAccount = (event, authUser) => {
     this.props.firebase.accounts().add({
       text: this.state.text,
       userId: authUser.uid,
@@ -63,18 +63,18 @@ class Accounts extends Component {
     event.preventDefault();
   };
 
-  onEditMessage = (message, text) => {
-    const { uid, ...Accountsnapshot } = message;
+  onEditAccount = (account, text) => {
+    const { uid, ...accountSnapshot } = account;
 
-    this.props.firebase.message(message.uid).update({
-      ...Accountsnapshot,
+    this.props.firebase.account(account.uid).update({
+      ...accountSnapshot,
       text,
       editedAt: this.props.firebase.fieldValue.serverTimestamp(),
     });
   };
 
-  onRemoveMessage = uid => {
-    this.props.firebase.message(uid).delete();
+  onRemoveAccount = uid => {
+    this.props.firebase.account(uid).delete();
   };
 
   onNextPage = () => {
@@ -91,20 +91,14 @@ class Accounts extends Component {
       <AuthUserContext.Consumer>
         {authUser => (
           <div>
-            {!loading && accounts && (
-              <button type="button" onClick={this.onNextPage}>
-                More
-              </button>
-            )}
-
             {loading && <div>Loading ...</div>}
 
             {accounts && (
               <AccountList
                 authUser={authUser}
                 accounts={accounts}
-                onEditMessage={this.onEditMessage}
-                onRemoveMessage={this.onRemoveMessage}
+                onEditAccount={this.onEditAccount}
+                onRemoveAccount={this.onRemoveAccount}
               />
             )}
 
