@@ -17,7 +17,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-lazy-load": "^3.0.13",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.0",
     "react-scripts": "3.0.1",
     "recompose": "^0.30.0"
   },
