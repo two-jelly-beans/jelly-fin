@@ -14,7 +14,7 @@
     "@material-ui/icons": "^4.5.1",
     "dotenv": "^8.2.0",
     "firebase": "^6.6.2",
-    "react": "^16.10.2",
+    "react": "^16.11.0",
     "react-dom": "^16.10.2",
     "react-lazy-load": "^3.0.13",
     "react-router-dom": "^5.1.2",
