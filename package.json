@@ -10,7 +10,7 @@
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
-    "@material-ui/core": "^4.6.0",
+    "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.3.0",
