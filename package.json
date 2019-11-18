@@ -31,7 +31,7 @@
     "cz-conventional-changelog": "^3.0.2",
     "install": "^0.13.0",
     "npm": "^6.13.0",
-    "semantic-release": "^15.13.30"
+    "semantic-release": "^15.13.31"
   },
   "eslintConfig": {
     "extends": "react-app"
