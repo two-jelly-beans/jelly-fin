@@ -30,7 +30,7 @@
     "@semantic-release/release-notes-generator": "^7.3.5",
     "cz-conventional-changelog": "^3.0.2",
     "install": "^0.13.0",
-    "npm": "^6.13.2",
+    "npm": "^6.13.3",
     "semantic-release": "^15.13.31"
   },
   "eslintConfig": {
