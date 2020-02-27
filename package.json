@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/commit-analyzer": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^8.0.0",
     "@semantic-release/github": "^7.0.4",
     "@semantic-release/npm": "^6.0.0",
