@@ -28,7 +28,7 @@
     "@semantic-release/github": "^5.4.3",
     "@semantic-release/npm": "^5.1.15",
     "@semantic-release/release-notes-generator": "^7.3.0",
-    "cz-conventional-changelog": "^3.0.2",
+    "cz-conventional-changelog": "^3.3.0",
     "install": "^0.13.0",
     "npm": "^6.11.3",
     "semantic-release": "^15.13.24"
